@@ -13,10 +13,5 @@ public class Exercicio1 {
         for(int i = 0; i <6; i++){
             System.out.println("Valor "+(i+1)+": "+numDigitado[i]);
         }
-
-        
-
-
-
     }
 }
