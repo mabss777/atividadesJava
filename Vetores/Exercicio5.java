@@ -5,7 +5,7 @@ public class Exercicio5 {
     public static void main(String[] args) {
  
         String[] alunos = new String[15];
-        double[] notas = new double[15];  // array para armazenar as notas de cada aluno
+        double[] notas = new double[15];  
  
         Scanner scanner = new Scanner(System.in);
  
@@ -17,10 +17,10 @@ public class Exercicio5 {
             System.out.println("Digite a nota do aluno " + alunos[i] + ":");
             notas[i] = scanner.nextDouble();
  
-            scanner.nextLine(); // limpa buffer
+            scanner.nextLine(); 
         }
  
-        // Calcula média geral
+        
         double soma = 0;
         for (int i = 0; i < 15; i++) {
             soma += notas[i];
