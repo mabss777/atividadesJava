@@ -27,7 +27,7 @@ public class Exercicio5 {
         }
         double mediaGeral = soma / 15;
  
-        System.out.println("Média geral da turma: " + mediaGeral);
+        System.out.println("Media geral da turma: " + mediaGeral);
  
         scanner.close();
     }
