@@ -3,17 +3,21 @@ import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+    
 
-        System.out.print("Digite o primeiro número: ");
+        int operacao;
+        
+        do{
+        System.out.print("Digite o primeiro numero: ");
         double num1 = scanner.nextDouble();
 
-        System.out.print("Digite o segundo número: ");
+        System.out.print("Digite o segundo numero: ");
         double num2 = scanner.nextDouble();
 
         menuCalculadora();
 
-        System.out.print("Digite o número da operação desejada: ");
-        int operacao = scanner.nextInt();
+        System.out.print("Digite o numero da operacao desejada: ");
+        operacao = scanner.nextInt();
 
         switch (operacao) {
             case 1:
@@ -31,20 +35,26 @@ public class Calculadora {
             case 5:
                 System.out.println("Resultado: " + resto((int)num1, (int)num2));
                 break;
-        }
+            case 6:
+                System.out.println("====== CALCULADORA ENCERRADA! ======");
+            case 7:
+
+            }
+        } while(operacao != 6);
+
 
         scanner.close();
     }
 
     public static void menuCalculadora() {
 
-        System.out.println("============= SEJA BEM VINDO A CALCULADORA =============");
-        System.out.println("==== Escolha a operação! ====");
-        System.out.println("▶▶▶▶▶▶ Multiplicar: 1 ◀◀◀◀◀◀◀");
-        System.out.println("▶▶▶▶▶▶ Somar: 2 ◀◀◀◀◀◀◀");
-        System.out.println("▶▶▶▶▶▶ Subtrair: 3 ◀◀◀◀◀◀");
-        System.out.println("▶▶▶▶▶▶ Dividir: 4 ◀◀◀◀◀◀");
-        System.out.println("▶▶▶▶▶▶ Resto da Divisão: 5 ◀◀◀◀◀◀");
+       System.out.println("\n==== Escolha a operacao! ====");
+            System.out.println("1 - Multiplicar");
+            System.out.println("2 - Somar");
+            System.out.println("3 - Subtrair");
+            System.out.println("4 - Dividir");
+            System.out.println("5 - Resto da Divisao");
+            System.out.println("6 - Sair");
     }
 
     public static double soma(double numero1, double numero2) {
