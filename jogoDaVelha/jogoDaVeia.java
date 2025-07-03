@@ -1,43 +1,64 @@
 import java.util.Scanner;
 public class jogoDaVeia{
- 
+
+    public static void imprimirTabuleiro(char[][] tabuleiro){
+        
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            for ( int j = 0; j < 3; j++) {        
+                System.out.print("\t"+tabuleiro[i][j]);
+                if (j < 2)
+                    System.out.print("\t|");
+            }
+            System.out.println();
+             if (i < 2){
+                System.out.println("____________________________________________________");
+            }
+            System.out.println();       
+        }
+    }
+    
     public static void main(String[] args) {
-        int[][] tabuleiro = new int[3][3];
+        char[][] tabuleiro = 
+        {
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+        };
+
+        
+
+        System.out.println("############### BEM VINDOS AO JOGO DA VELHA ###############");
+
+        pedidos();
+
+        imprimirTabuleiro(tabuleiro);
+    
+        }
+    
+    public static int pedidos() {
         int numRodadas = 0;
         int jogadores = 0; 
         Scanner scanner = new Scanner(System.in);
+        int[][] tabuleiro = new int[3][3];
         int i = 0;
         int j = 0;
         
-        do{
-            socorro();
-           for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++) {        
-                System.out.println(tabuleiro[i][j] + "\t");
-                    }                                 
-                }            
-            
-            System.out.println("Deseja finalizar? digite 1 para sair e digite 2 para continuar!");
-            sair = scanner.nextInt();
-
-            switch(sair){
-                case 1:
-                    System.out.println("========== JOGO ENCERRADO ===============");
-                case 2:
-                     System.out.println("========= Vamos continuar este jogo! ========");
-             } 
-            }while(sair = 2); 
-
-            public static int socorro() {
-
             System.out.println("Rodada "+ (numRodadas + 1) );
             System.out.println("Eh a vez do jogador "+ (jogadores+1));
             
             System.out.println("Qual linha voce ira escolher?");
-            tabuleiro[i] = scanner.nextInt();
+            tabuleiro[i] = Scanner.nextInt();
             
             System.out.println("Qual coluna voce ira escolher?");
-            tabuleiro[j] = scanner.nextInt();
-            }       
-        }    
-    }
+            tabuleiro[j] = Scanner.next();
+            } 
+}
+
+/*public static void limparTela(){
+        try{
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e){
+            System.out.println("Erro ao tentar limpar a tela!");
+        }
+    }*/
